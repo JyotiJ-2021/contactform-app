@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/contactform-app/static/css/main.cd2e78a1.css",
-    "main.js": "/contactform-app/static/js/main.f24655ce.js",
+    "main.js": "/contactform-app/static/js/main.64b9572d.js",
     "index.html": "/contactform-app/index.html",
     "main.cd2e78a1.css.map": "/contactform-app/static/css/main.cd2e78a1.css.map",
-    "main.f24655ce.js.map": "/contactform-app/static/js/main.f24655ce.js.map"
+    "main.64b9572d.js.map": "/contactform-app/static/js/main.64b9572d.js.map"
   },
   "entrypoints": [
     "static/css/main.cd2e78a1.css",
-    "static/js/main.f24655ce.js"
+    "static/js/main.64b9572d.js"
   ]
 }
