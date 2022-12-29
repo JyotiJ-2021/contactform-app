@@ -7,9 +7,9 @@ import UpdateContact from "./components/UpdateContact";
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter basename="/contactform-app">
         <Routes>
-          <Route path="/" element={<DisplayContact />} />
+          <Route exact path="/contactform-app" element={<DisplayContact />} />
           <Route path="/add-contact" element={<AddContact />} />
           <Route path="/edit-contact/:id" element={<UpdateContact />} />
         </Routes>
