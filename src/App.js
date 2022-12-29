@@ -6,21 +6,11 @@ import UpdateContact from "./components/UpdateContact";
 function App() {
   return (
     <div className="App">
-      <BrowserRouter basename="contactform-app">
+      <BrowserRouter>
         <Routes>
-          <Route
-            exact
-            path="https://jyotij-2021.github.io/contactform-app"
-            element={<DisplayContact />}
-          />
-          <Route
-            path="https://jyotij-2021.github.io/contactform-app/add-contact"
-            element={<AddContact />}
-          />
-          <Route
-            path="https://jyotij-2021.github.io/contactform-app/edit-contact/:id"
-            element={<UpdateContact />}
-          />
+          <Route exact path="/" element={<DisplayContact />} />
+          <Route path="/add-contact" element={<AddContact />} />
+          <Route path="/edit-contact/:id" element={<UpdateContact />} />
         </Routes>
       </BrowserRouter>
     </div>

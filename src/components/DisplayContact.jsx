@@ -40,7 +40,7 @@ function DisplayContact() {
       setData(result);
       JSON.parse(localStorage.setItem("contact-list", JSON.stringify(result)));
 
-      window.location.href = "https://jyotij-2021.github.io/contactform-app";
+      window.location.href = "/";
     }
   };
 
@@ -65,7 +65,7 @@ function DisplayContact() {
               <div className=" lg:flex lg:min-w-0 lg:flex-1 lg:justify-center">
                 <p>
                   <a
-                    href="https://jyotij-2021.github.io/contactform-app/contactform-app/add-contact"
+                    href="/add-contact"
                     className="inline-block rounded-lg px-3 py-1.5 text-lg font-semibold leading-6 text-gray-900 shadow-sm ring-1 ring-gray-900/10 hover:ring-gray-900/20"
                   >
                     Add New Contact
@@ -86,7 +86,7 @@ function DisplayContact() {
               </div>
               <div className=" lg:flex lg:min-w-0 lg:flex-1 lg:justify-end">
                 <a
-                  href="https://jyotij-2021.github.io/contactform-app/add-contact"
+                  href="/add-contact"
                   style={{ float: "right" }}
                   className=" mb-10 inline-block rounded-lg px-2 py-1 text-sm font-semibold leading-6 text-gray-900 shadow-sm ring-1 ring-gray-900/10 hover:ring-gray-900/20"
                 >
@@ -131,7 +131,7 @@ function DisplayContact() {
                           </td>
                           <td className="border px-4 py-2 text-center">
                             <a
-                              href={`https://jyotij-2021.github.io/contactform-app/edit-contact/${item.id}`}
+                              href={`/edit-contact/${item.id}`}
                               className="inline-block rounded-lg px-3 py-1 text-sm font-semibold leading-6 text-teal-400   ring-teal-900/10 hover:ring-teal-900/20"
                             >
                               Edit
