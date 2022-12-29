@@ -59,7 +59,7 @@ function UpdateContact() {
     setTimeout(() => {
       setMessage(false);
 
-      window.location.href = "/";
+      window.location.href = "/contactform-app";
     }, 2000);
   };
 
@@ -233,7 +233,7 @@ function UpdateContact() {
                 className="shadow   hover:bg-purple-400 focus:shadow-outline focus:outline-none font-bold py-2 px-4 rounded"
                 type="button"
               >
-                <Link to="/"> Cancel</Link>
+                <Link to="/contactform-app"> Cancel</Link>
               </button>
             </div>
             <div className="md:w-2/3 text-center">
