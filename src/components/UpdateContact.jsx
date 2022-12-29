@@ -3,6 +3,9 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Header from "./Header";
 import ReactFileReader from "react-file-reader";
+const url =
+  "http://localhost:3000/contactform-app" ||
+  "https://jyotij-2021.github.io/contactform-app";
 
 function UpdateContact() {
   const { id } = useParams();
@@ -59,7 +62,7 @@ function UpdateContact() {
     setTimeout(() => {
       setMessage(false);
 
-      window.location.href = "/";
+      window.location.href = url;
     }, 2000);
   };
 
@@ -233,7 +236,7 @@ function UpdateContact() {
                 className="shadow   hover:bg-purple-400 focus:shadow-outline focus:outline-none font-bold py-2 px-4 rounded"
                 type="button"
               >
-                <Link to="/"> Cancel</Link>
+                <Link to={"/"}> Cancel</Link>
               </button>
             </div>
             <div className="md:w-2/3 text-center">

@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { v4 as uuid } from "uuid";
 import ReactFileReader from "react-file-reader";
 import Header from "./Header";
+const url =
+  "http://localhost:3000/contactform-app" ||
+  "https://jyotij-2021.github.io/contactform-app";
 
 function AddContact() {
   const [name, setName] = useState("");
@@ -42,7 +45,7 @@ function AddContact() {
       setTimeout(() => {
         setMessage(false);
 
-        window.location.href = "/";
+        window.location.href = url;
       }, 2000);
     } else {
       alert("Please fill all the required field!");
@@ -219,7 +222,7 @@ function AddContact() {
                 className="shadow  hover:bg-purple-400 focus:shadow-outline focus:outline-none font-bold py-2 px-4 rounded"
                 type="button"
               >
-                <Link to="/"> Cancel</Link>
+                <Link to={"/"}> Cancel</Link>
               </button>
             </div>
             <div className="md:w-2/3 text-center">
