@@ -3,9 +3,7 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Header from "./Header";
 import ReactFileReader from "react-file-reader";
-const url =
-  "http://localhost:3000/contactform-app" ||
-  "https://jyotij-2021.github.io/contactform-app";
+import { _Url } from "../config";
 
 function UpdateContact() {
   const { id } = useParams();
@@ -62,7 +60,7 @@ function UpdateContact() {
     setTimeout(() => {
       setMessage(false);
 
-      window.location.href = url;
+      window.location.href = _Url;
     }, 2000);
   };
 

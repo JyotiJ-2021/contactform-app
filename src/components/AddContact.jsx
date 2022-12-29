@@ -3,9 +3,7 @@ import { Link } from "react-router-dom";
 import { v4 as uuid } from "uuid";
 import ReactFileReader from "react-file-reader";
 import Header from "./Header";
-const url =
-  "http://localhost:3000/contactform-app" ||
-  "https://jyotij-2021.github.io/contactform-app";
+import { _Url } from "../config";
 
 function AddContact() {
   const [name, setName] = useState("");
@@ -45,7 +43,7 @@ function AddContact() {
       setTimeout(() => {
         setMessage(false);
 
-        window.location.href = url;
+        window.location.href = _Url;
       }, 2000);
     } else {
       alert("Please fill all the required field!");
