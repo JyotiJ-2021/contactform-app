@@ -59,7 +59,7 @@ function UpdateContact() {
     setTimeout(() => {
       setMessage(false);
 
-      window.location.href = "/contactform-app";
+      window.location.href = "https://jyotij-2021.github.io/contactform-app";
     }, 2000);
   };
 
@@ -233,7 +233,9 @@ function UpdateContact() {
                 className="shadow   hover:bg-purple-400 focus:shadow-outline focus:outline-none font-bold py-2 px-4 rounded"
                 type="button"
               >
-                <Link to="/contactform-app"> Cancel</Link>
+                <Link to="https://jyotij-2021.github.io/contactform-app">
+                  Cancel
+                </Link>
               </button>
             </div>
             <div className="md:w-2/3 text-center">
