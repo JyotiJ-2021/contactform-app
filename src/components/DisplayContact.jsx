@@ -66,7 +66,7 @@ function DisplayContact() {
               <div className=" lg:flex lg:min-w-0 lg:flex-1 lg:justify-center">
                 <p>
                   <a
-                    href={`${_Url}/add-contact`}
+                    href={`${_Url}/add-contact`} target="_self"
                     className="inline-block rounded-lg px-3 py-1.5 text-lg font-semibold leading-6 text-gray-900 shadow-sm ring-1 ring-gray-900/10 hover:ring-gray-900/20"
                   >
                     Add New Contact
@@ -87,7 +87,7 @@ function DisplayContact() {
               </div>
               <div className=" lg:flex lg:min-w-0 lg:flex-1 lg:justify-end">
                 <a
-                  href={`${_Url}/add-contact`}
+                  href={`${_Url}/add-contact`} target="_self"
                   style={{ float: "right" }}
                   className=" mb-10 inline-block rounded-lg px-2 py-1 text-sm font-semibold leading-6 text-gray-900 shadow-sm ring-1 ring-gray-900/10 hover:ring-gray-900/20"
                 >
@@ -132,7 +132,7 @@ function DisplayContact() {
                           </td>
                           <td className="border px-4 py-2 text-center">
                             <a
-                              href={`${_Url}/edit-contact/${item.id}`}
+                              href={`${_Url}/edit-contact/${item.id}`} target="_self"
                               className="inline-block rounded-lg px-3 py-1 text-sm font-semibold leading-6 text-teal-400   ring-teal-900/10 hover:ring-teal-900/20"
                             >
                               Edit
