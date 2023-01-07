@@ -215,6 +215,7 @@ function DisplayContact() {
                           <td className="border px-4 py-2 text-center">
                             <a
                               href={`${_Url}/edit-contact/${item.id}`}
+                              target="_self"
                               className="inline-block rounded-lg px-3 py-1 text-sm font-semibold leading-6 text-teal-400   ring-teal-900/10 hover:ring-teal-900/20"
                             >
                               Edit
