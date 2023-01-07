@@ -1,3 +1,3 @@
-let _Url = "https://jyotij-2021.github.io/contactform-app";
+let _Url = "http://localhost:3000";
 
 export { _Url };

@@ -43,7 +43,7 @@ function AddContact() {
       setTimeout(() => {
         setMessage(false);
 
-        window.location.href = _Url;
+        window.location.href = "/";
       }, 2000);
     } else {
       alert("Please fill all the required field!");
