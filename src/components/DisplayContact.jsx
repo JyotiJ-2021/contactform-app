@@ -44,6 +44,86 @@ function DisplayContact() {
       window.location.href = _Url;
     }
   };
+  let blocks = [
+    {
+      gym: false,
+      school: true,
+      store: false,
+    },
+    {
+      gym: true,
+      school: false,
+      store: false,
+    },
+    {
+      gym: true,
+      school: true,
+      store: false,
+    },
+    {
+      gym: false,
+      school: true,
+      store: false,
+    },
+    {
+      gym: false,
+      school: true,
+      store: true,
+    },
+  ];
+  let reqs = ["gym", "school", "store"];
+
+  console.log(apartmentHunting(blocks, reqs));
+  function apartmentHunting(blocks, reqs) {
+    let arr = [];
+    for (let i = 0; i < blocks.length; i++) {
+      arr[i] = getNewSteps(i, blocks, reqs);
+    }
+
+    return arr.indexOf(Math.min(...arr));
+  }
+
+  function getNewSteps(index, blocks, reqs) {
+    let min = 0;
+    let obj = {};
+
+    for (let key in blocks[index]) {
+      obj[key] = blocks[index][key];
+    }
+
+    let left = index;
+    let right = index;
+
+    while (left >= 0 || right < blocks.length) {
+      let leftobj = left >= 0 ? blocks[left] : {};
+      let rightobj = right < blocks.length ? blocks[right] : {};
+      let currObj = getMergeObj(leftobj, rightobj, obj, reqs);
+      if (containsAllReq(currObj, reqs)) {
+        return min;
+      }
+      min++;
+      left--;
+      right++;
+    }
+
+    return min;
+  }
+
+  function getMergeObj(left, right, currObj, reqs) {
+    for (let key of reqs) {
+      currObj[key] = left[key] || right[key] || currObj[key] ? true : false;
+    }
+
+    return currObj;
+  }
+
+  function containsAllReq(currObj, reqs) {
+    for (let i = 0; i < reqs.length; i++) {
+      let a = reqs[i];
+      if (currObj[a] === false) return false;
+    }
+    return true;
+  }
 
   return (
     <div>
@@ -67,6 +147,7 @@ function DisplayContact() {
                 <p>
                   <a
                     href={`${_Url}/add-contact`}
+                    target="_self"
                     className="inline-block rounded-lg px-3 py-1.5 text-lg font-semibold leading-6 text-gray-900 shadow-sm ring-1 ring-gray-900/10 hover:ring-gray-900/20"
                   >
                     Add New Contact
@@ -88,6 +169,7 @@ function DisplayContact() {
               <div className=" lg:flex lg:min-w-0 lg:flex-1 lg:justify-end">
                 <a
                   href={`${_Url}/add-contact`}
+                  target="_self"
                   style={{ float: "right" }}
                   className=" mb-10 inline-block rounded-lg px-2 py-1 text-sm font-semibold leading-6 text-gray-900 shadow-sm ring-1 ring-gray-900/10 hover:ring-gray-900/20"
                 >
