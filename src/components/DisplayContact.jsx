@@ -127,14 +127,13 @@ function DisplayContact() {
 
   return (
     <div>
-      <Header />
       <div className="isolate w-full bg-white">
         <main>
           <div className="px-6 lg:px-8">
             <div className="mx-auto max-w-3xl pt-20 pb-10 sm:pt-10 sm:pb-10">
               <div>
                 <div>
-                  <h1 className="underline decoration-2 text-2xl font-bold sm:text-center sm:text-2xl">
+                  <h1 className="decoration-2 text-2xl font-bold sm:text-center sm:text-2xl">
                     Contact List
                   </h1>
                 </div>
@@ -145,7 +144,7 @@ function DisplayContact() {
                 href={`/add-contact`}
                 target="_self"
                 style={{ float: "right" }}
-                className=" mb-10 inline-block rounded-lg px-2 py-1 text-sm font-semibold leading-6 text-gray-900 shadow-sm ring-1 ring-gray-900/10 hover:ring-gray-900/20"
+                className="bg-indigo-400 mb-10 inline-block rounded-lg px-2 py-2 text-sm font-semibold leading-6 text-white shadow-sm ring-1 ring-gray-900/10 hover:ring-gray-900/20"
               >
                 + Add New Contact
               </a>
@@ -153,7 +152,7 @@ function DisplayContact() {
             <div className="flex justify-center w-full">
               <table className="table-fixed border w-full">
                 <thead>
-                  <tr>
+                  <tr className="bg-indigo-400">
                     <th className="border px-4 py-2">Name</th>
                     <th className="border px-4 py-2">Phone</th>
                     <th className="border px-4 py-2">Type</th>
@@ -165,7 +164,6 @@ function DisplayContact() {
                 <tbody>
                   {data.length > 0 ? (
                     data.map((item, index) => {
-                      console.log(item.type);
                       return (
                         <tr key={index}>
                           <td className="border px-4 py-2 text-center">
@@ -192,7 +190,7 @@ function DisplayContact() {
                             <a
                               href={`/edit-contact/${item.id}`}
                               target="_self"
-                              className="inline-block rounded-lg px-3 py-1 text-sm font-semibold leading-6 text-teal-400   ring-teal-900/10 hover:ring-teal-900/20"
+                              className="inline-block rounded-lg px-3 py-1 text-sm font-semibold leading-6 text-indigo-400   ring-teal-900/10 hover:ring-teal-900/20"
                             >
                               Edit
                             </a>
@@ -225,38 +223,44 @@ function DisplayContact() {
           </div>
 
           {message === true ? (
-            <div
-              id="popup-modal"
-              tabindex="-1"
-              style={{ marginTop: "20%" }}
-              className="fixed flex  justify-center top-20 left-0 right-0 z-50  p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full"
-            >
-              <div className="relative w-full h-full max-w-md md:h-auto">
-                <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                  <div className="p-6 text-center">
-                    <h3 className="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">
-                      Are you sure you want to delete this contact?
-                    </h3>
-                    <button
-                      data-modal-toggle="popup-modal"
-                      type="button"
-                      onClick={() => handleDelete(dataValue)}
-                      className="text-white bg-slate-600 hover:bg-slate-800 focus:ring-2 focus:outline-none focus:ring-slate-300 dark:focus:ring-slate-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2"
-                    >
-                      Yes
-                    </button>
-                    <button
-                      data-modal-toggle="popup-modal"
-                      type="button"
-                      onClick={() => setMessage(false)}
-                      className="text-gray-500 bg-white hover:bg-gray-100 focus:ring-2 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600"
-                    >
-                      No
-                    </button>
+            <>
+              <div className="bg-blur"></div>
+              <div
+                id="popup-modal"
+                tabindex="-1"
+                style={{ marginTop: "20%" }}
+                className="fixed flex  justify-center top-20 left-0 right-0 z-50  p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full"
+              >
+                <div className="relative w-full h-full max-w-md md:h-auto">
+                  <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                    <div className="p-6 text-center">
+                      <h4 className="mb-5 decoration-2 text-2xl font-bold sm:text-center sm:text-2xl">
+                        Delete Contact
+                      </h4>
+                      <h3 className="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">
+                        Are you sure you want to delete this contact?
+                      </h3>
+                      <button
+                        data-modal-toggle="popup-modal"
+                        type="button"
+                        onClick={() => setMessage(false)}
+                        className="text-gray-500 bg-white hover:bg-gray-100 focus:ring-2 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600"
+                      >
+                        No
+                      </button>
+                      <button
+                        data-modal-toggle="popup-modal"
+                        type="button"
+                        onClick={() => handleDelete(dataValue)}
+                        className="mx-4 bg-indigo-400 text-white bg-slate-600 hover:bg-slate-800 focus:ring-2 focus:outline-none focus:ring-slate-300 dark:focus:ring-slate-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2"
+                      >
+                        Yes
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </>
           ) : (
             ""
           )}

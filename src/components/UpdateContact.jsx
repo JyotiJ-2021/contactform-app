@@ -71,13 +71,12 @@ function UpdateContact() {
 
   return (
     <div>
-      <Header />
       <div className=" lg:flex lg:min-w-0 lg:flex-1 mt-12 lg:justify-center">
-        <h1 className="underline decoration-2 text-2xl font-bold sm:text-center sm:text-2xl">
+        <h1 className="decoration-2 text-2xl font-bold sm:text-center sm:text-2xl">
           Edit Contact
         </h1>
       </div>
-      <div className="relative mx-auto mt-8 w-full justify-center flex max-w-container px-4 sm:px-6 lg:px-8 ">
+      <div className="relative mx-auto w-full justify-center flex max-w-container px-4 sm:px-6 lg:px-8 ">
         <form className="w-full max-w-lg bg-white shadow-md rounded  px-8 pt-6 pb-8 mb-4">
           <div className="md:flex md:items-center mb-6">
             <div className="md:w-1/3">
@@ -231,7 +230,7 @@ function UpdateContact() {
           <div className="md:flex  mt-10 md:items-center">
             <div className="md:w-2/3 text-center">
               <button
-                className="shadow   hover:bg-purple-400 focus:shadow-outline focus:outline-none font-bold py-2 px-4 rounded"
+                className="bg-white-400 shadow hover:bg-white-400 focus:shadow-outline focus:outline-none font-bold py-2 px-4 rounded"
                 type="button"
               >
                 <Link to={"/"}> Cancel</Link>
@@ -239,7 +238,7 @@ function UpdateContact() {
             </div>
             <div className="md:w-2/3 text-center">
               <button
-                className="shadow bg-black hover:bg-black-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                className="bg-indigo-400 shadow hover:bg-black-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
                 type="button"
                 onClick={handleUpdate}
               >
