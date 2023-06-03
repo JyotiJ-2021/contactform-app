@@ -73,7 +73,7 @@ function DisplayContact() {
   ];
   let reqs = ["gym", "school", "store"];
 
-  console.log(apartmentHunting(blocks, reqs));
+  // console.log(apartmentHunting(blocks, reqs));
   function apartmentHunting(blocks, reqs) {
     let arr = [];
     for (let i = 0; i < blocks.length; i++) {
@@ -130,66 +130,42 @@ function DisplayContact() {
       <Header />
       <div className="isolate w-full bg-white">
         <main>
-          {data !== null &&
-          data !== undefined &&
-          data !== "" &&
-          data.length <= 0 ? (
-            <div className="align-middle content-center justify-center items-center">
-              <div
-                className=" lg:flex lg:min-w-0 lg:flex-1 lg:justify-center"
-                style={{ marginTop: "10%" }}
-              >
-                <p className="inline-block  px-3 py-1.5 text-lg font-semibold leading-6 text-gray-900  ring-gray-900/10 hover:ring-gray-900/20">
-                  No contacts saved
-                </p>
-              </div>
-              <div className=" lg:flex lg:min-w-0 lg:flex-1 lg:justify-center">
-                <p>
-                  <a
-                    href={`/add-contact`}
-                    target="_self"
-                    className="inline-block rounded-lg px-3 py-1.5 text-lg font-semibold leading-6 text-gray-900 shadow-sm ring-1 ring-gray-900/10 hover:ring-gray-900/20"
-                  >
-                    Add New Contact
-                  </a>
-                </p>
-              </div>
-            </div>
-          ) : (
-            <div className="px-6 lg:px-8">
-              <div className="mx-auto max-w-3xl pt-20 pb-10 sm:pt-10 sm:pb-10">
+          <div className="px-6 lg:px-8">
+            <div className="mx-auto max-w-3xl pt-20 pb-10 sm:pt-10 sm:pb-10">
+              <div>
                 <div>
-                  <div>
-                    <h1 className="underline decoration-2 text-2xl font-bold sm:text-center sm:text-2xl">
-                      Contact List
-                    </h1>
-                  </div>
+                  <h1 className="underline decoration-2 text-2xl font-bold sm:text-center sm:text-2xl">
+                    Contact List
+                  </h1>
                 </div>
               </div>
-              <div className=" lg:flex lg:min-w-0 lg:flex-1 lg:justify-end">
-                <a
-                  href={`/add-contact`}
-                  target="_self"
-                  style={{ float: "right" }}
-                  className=" mb-10 inline-block rounded-lg px-2 py-1 text-sm font-semibold leading-6 text-gray-900 shadow-sm ring-1 ring-gray-900/10 hover:ring-gray-900/20"
-                >
-                  + Add New Contact
-                </a>
-              </div>
-              <div className="flex justify-center w-full">
-                <table className="table-fixed border w-full">
-                  <thead>
-                    <tr>
-                      <th className="border px-4 py-2">Name</th>
-                      <th className="border px-4 py-2">Phone</th>
-                      <th className="border px-4 py-2">Type</th>
-                      <th className="border px-4 py-2">Is WhatApp</th>
-                      <th className="border px-4 py-2">Profile Picture</th>
-                      <th className="border px-4 py-2">Actions</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {data.map((item, index) => {
+            </div>
+            <div className=" lg:flex lg:min-w-0 lg:flex-1 lg:justify-end">
+              <a
+                href={`/add-contact`}
+                target="_self"
+                style={{ float: "right" }}
+                className=" mb-10 inline-block rounded-lg px-2 py-1 text-sm font-semibold leading-6 text-gray-900 shadow-sm ring-1 ring-gray-900/10 hover:ring-gray-900/20"
+              >
+                + Add New Contact
+              </a>
+            </div>
+            <div className="flex justify-center w-full">
+              <table className="table-fixed border w-full">
+                <thead>
+                  <tr>
+                    <th className="border px-4 py-2">Name</th>
+                    <th className="border px-4 py-2">Phone</th>
+                    <th className="border px-4 py-2">Type</th>
+                    <th className="border px-4 py-2">Is WhatApp</th>
+                    <th className="border px-4 py-2">Profile Picture</th>
+                    <th className="border px-4 py-2">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {data.length > 0 ? (
+                    data.map((item, index) => {
+                      console.log(item.type);
                       return (
                         <tr key={index}>
                           <td className="border px-4 py-2 text-center">
@@ -199,7 +175,7 @@ function DisplayContact() {
                             {item.phone}
                           </td>
                           <td className="border px-4 py-2 text-center">
-                            {item.type === 1 ? "Personal" : "Office"}
+                            {item.type === "1" ? "Personal" : "Office"}
                           </td>
                           <td className="border px-4 py-2 text-center">
                             {item.isWhatsup}
@@ -230,12 +206,23 @@ function DisplayContact() {
                           </td>
                         </tr>
                       );
-                    })}
-                  </tbody>
-                </table>
-              </div>
+                    })
+                  ) : (
+                    <tr>
+                      <td className="border px-4 py-2 text-center">-</td>
+                      <td className="border px-4 py-2 text-center">-</td>
+                      <td className="border px-4 py-2 text-center">-</td>
+                      <td className="border px-4 py-2 text-center">-</td>
+                      <td className="border px-4 py-2 flex justify-center ">
+                        -
+                      </td>
+                      <td className="border px-4 py-2 text-center">-</td>
+                    </tr>
+                  )}
+                </tbody>
+              </table>
             </div>
-          )}
+          </div>
 
           {message === true ? (
             <div
