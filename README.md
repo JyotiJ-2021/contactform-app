@@ -1,13 +1,16 @@
 # Getting Started with Create React App
 
-### `npm start`
+This project is created using Tailwind CSS, React JS.
 
-### `npm test`
+## Getting Started
 
-### `npm run build`
+1. Clone the repository: git clone https://github.com/JyotiJ-2021/contactform-app.git
+2. Install dependencies: npm install
+3. Start the development server: npm start
+4. Build: npm run build
 
-### `npm run eject`
+## your feedback and contributions are welcome!
 
-### `npm run build`
+## Deploy on Vercel
 
-This project is created using tailwind css.
+The easiest way to deploy your React app.

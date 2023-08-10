@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Header from "./Header";
-import { _Url } from "../config";
+// import { _Url } from "../config";
+import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
+import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
 
 function DisplayContact() {
   const [data, setData] = useState([]);
@@ -44,86 +45,6 @@ function DisplayContact() {
       window.location.href = "/";
     }
   };
-  let blocks = [
-    {
-      gym: false,
-      school: true,
-      store: false,
-    },
-    {
-      gym: true,
-      school: false,
-      store: false,
-    },
-    {
-      gym: true,
-      school: true,
-      store: false,
-    },
-    {
-      gym: false,
-      school: true,
-      store: false,
-    },
-    {
-      gym: false,
-      school: true,
-      store: true,
-    },
-  ];
-  let reqs = ["gym", "school", "store"];
-
-  // console.log(apartmentHunting(blocks, reqs));
-  function apartmentHunting(blocks, reqs) {
-    let arr = [];
-    for (let i = 0; i < blocks.length; i++) {
-      arr[i] = getNewSteps(i, blocks, reqs);
-    }
-
-    return arr.indexOf(Math.min(...arr));
-  }
-
-  function getNewSteps(index, blocks, reqs) {
-    let min = 0;
-    let obj = {};
-
-    for (let key in blocks[index]) {
-      obj[key] = blocks[index][key];
-    }
-
-    let left = index;
-    let right = index;
-
-    while (left >= 0 || right < blocks.length) {
-      let leftobj = left >= 0 ? blocks[left] : {};
-      let rightobj = right < blocks.length ? blocks[right] : {};
-      let currObj = getMergeObj(leftobj, rightobj, obj, reqs);
-      if (containsAllReq(currObj, reqs)) {
-        return min;
-      }
-      min++;
-      left--;
-      right++;
-    }
-
-    return min;
-  }
-
-  function getMergeObj(left, right, currObj, reqs) {
-    for (let key of reqs) {
-      currObj[key] = left[key] || right[key] || currObj[key] ? true : false;
-    }
-
-    return currObj;
-  }
-
-  function containsAllReq(currObj, reqs) {
-    for (let i = 0; i < reqs.length; i++) {
-      let a = reqs[i];
-      if (currObj[a] === false) return false;
-    }
-    return true;
-  }
 
   return (
     <div>
@@ -150,43 +71,43 @@ function DisplayContact() {
               </a>
             </div>
             <div className="flex justify-center w-full">
-              <table className="table-fixed border w-full">
-                <thead>
-                  <tr className="bg-indigo-400">
-                    <th className="border px-4 py-2">Name</th>
-                    <th className="border px-4 py-2">Phone</th>
-                    <th className="border px-4 py-2">Type</th>
-                    <th className="border px-4 py-2">Is WhatApp</th>
-                    <th className="border px-4 py-2">Profile Picture</th>
-                    <th className="border px-4 py-2">Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
+              <Table className="table-fixed border w-full">
+                <Thead>
+                  <Tr className="bg-indigo-400">
+                    <Th className="border px-4 py-2">Name</Th>
+                    <Th className="border px-4 py-2">Phone</Th>
+                    <Th className="border px-4 py-2">Type</Th>
+                    <Th className="border px-4 py-2">Is WhatApp</Th>
+                    <Th className="border px-4 py-2">Profile Picture</Th>
+                    <Th className="border px-4 py-2">Actions</Th>
+                  </Tr>
+                </Thead>
+                <Tbody>
                   {data.length > 0 ? (
                     data.map((item, index) => {
                       return (
-                        <tr key={index}>
-                          <td className="border px-4 py-2 text-center">
+                        <Tr key={index}>
+                          <Td className="border px-4 py-2 text-center">
                             {item.name}
-                          </td>
-                          <td className="border px-4 py-2 text-center">
+                          </Td>
+                          <Td className="border px-4 py-2 text-center">
                             {item.phone}
-                          </td>
-                          <td className="border px-4 py-2 text-center">
+                          </Td>
+                          <Td className="border px-4 py-2 text-center">
                             {item.type === "1" ? "Personal" : "Office"}
-                          </td>
-                          <td className="border px-4 py-2 text-center">
+                          </Td>
+                          <Td className="border px-4 py-2 text-center">
                             {item.isWhatsup}
-                          </td>
-                          <td className="border px-4 py-2 flex justify-center ">
+                          </Td>
+                          <Td className="border px-4 py-2 flex justify-center ">
                             <img
                               src={item.profile_img}
                               alt="Profile"
                               width={"70px"}
                               height="70px"
                             />
-                          </td>
-                          <td className="border px-4 py-2 text-center">
+                          </Td>
+                          <Td className="border px-4 py-2 text-center">
                             <a
                               href={`/edit-contact/${item.id}`}
                               target="_self"
@@ -201,24 +122,24 @@ function DisplayContact() {
                             >
                               Delete
                             </span>
-                          </td>
-                        </tr>
+                          </Td>
+                        </Tr>
                       );
                     })
                   ) : (
-                    <tr>
-                      <td className="border px-4 py-2 text-center">-</td>
-                      <td className="border px-4 py-2 text-center">-</td>
-                      <td className="border px-4 py-2 text-center">-</td>
-                      <td className="border px-4 py-2 text-center">-</td>
-                      <td className="border px-4 py-2 flex justify-center ">
+                    <Tr>
+                      <Td className="border px-4 py-2 text-center">-</Td>
+                      <Td className="border px-4 py-2 text-center">-</Td>
+                      <Td className="border px-4 py-2 text-center">-</Td>
+                      <Td className="border px-4 py-2 text-center">-</Td>
+                      <Td className="border px-4 py-2 flex justify-center ">
                         -
-                      </td>
-                      <td className="border px-4 py-2 text-center">-</td>
-                    </tr>
+                      </Td>
+                      <Td className="border px-4 py-2 text-center">-</Td>
+                    </Tr>
                   )}
-                </tbody>
-              </table>
+                </Tbody>
+              </Table>
             </div>
           </div>
 

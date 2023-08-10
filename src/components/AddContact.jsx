@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { v4 as uuid } from "uuid";
 import ReactFileReader from "react-file-reader";
-import Header from "./Header";
-import { _Url } from "../config";
+// import { _Url } from "../config";
 
 function AddContact() {
   const [name, setName] = useState("");
@@ -57,7 +56,7 @@ function AddContact() {
 
   return (
     <div>
-      <div className=" lg:flex lg:min-w-0 lg:flex-1 mt-12 lg:justify-center">
+      <div className="mt-20 lg:flex lg:min-w-0 lg:flex-1 mt-12 lg:justify-center">
         <h1 className=" decoration-2 text-2xl font-bold sm:text-center sm:text-2xl">
           Add Contact
         </h1>

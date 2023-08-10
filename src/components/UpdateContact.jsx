@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import Header from "./Header";
 import ReactFileReader from "react-file-reader";
-import { _Url } from "../config";
+// import { _Url } from "../config";
 
 function UpdateContact() {
   const { id } = useParams();
